@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>動画を交互に再生</title>
+        <style>
+            .movie{
+                width: 45%;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+
+    <body style="text-align: center;">
+        <h2>動画を交互に再生します</h2>
+
+        <div>
+            <video class="movie" src="movies/no00.mp4" poster="movies/no00.jpg" muted playsinline></video>
+            <video class="movie" src="movies/no01.mp4" poster="movies/no01.jpg" muted playsinline></video>
+        </div>
+        <script>
+            "use strict";
+            
+            const movies=document.getElementsByClassName("movie");
+
+            let playing=0;
+            movies[playing].play();
+            let timerID=setInterval(playOneMovie,3*1000);
+            setTimeout(() => {
+                clearInterval(timerID);
+                movies[0].pause();
+                movies[1].pause();
+            },60*1000);
+
+            function playOneMovie(){
+                movies[playing].pause();
+                playing = 1-playing;
+                movies[playing].play();
+            }
+        </script>
+    </body>
+</html>

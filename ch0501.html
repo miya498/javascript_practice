@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript演習4-12</title>
+    </head>
+    <body>
+        <script>
+            "use strict";
+            
+            function 運勢を表示(人名,日にち){
+                let x = Math.random();
+                if(x < 0.2){
+                    x = "凶";
+                }else if(x < 0.7){
+                    x = "小吉";
+                }else{
+                    x = "大吉";
+                }
+                const 結果=`<span style="color: red;">${x}</span>`;
+                document.write(`${人名}の${日にち}の運勢は${結果}です!!<br>`);
+            }
+
+            運勢を表示("nisi","今日");
+            運勢を表示("東","明日");
+            運勢を表示("北","朝日");
+            
+        </script>
+    </body>
+</html>

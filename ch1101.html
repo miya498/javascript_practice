@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript演習11章</title>
+    </head>
+    <body>
+        <div style="width: 320px; text-align: center; font-size: 36pt;">
+            ロケット発射<br>
+            <img src="pictures/rocket1.png" style="width: 200px;">
+            <div id="counterArea"></div>        
+        </div>
+
+        <script>
+            "use strict";
+            let count=10;
+            const タイマーID=setInterval(カウントダウン,1000);
+
+
+            function カウントダウン(){
+                if(count >= 0){
+                    document.getElementById("counterArea").innerHTML=count;
+                    count--;
+                }else{
+                    clearInterval(タイマーID);
+                    document.getElementById("counterArea").innerHTML="発射!!";
+                    document.images[0].src="pictures/rocket2.png";
+                }
+            }
+
+        </script>
+    </body>
+</html>

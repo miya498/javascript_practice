@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript演習9-1,2</title>
+        <style>
+            .movie{
+                width: 45%;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+
+    <body style="text-align: center;">
+        <h2>英和辞書</h2>
+
+        <script>
+            "use strict";
+            
+            const 英和辞書={
+                library: "図書館", mountain: "山", river: "川",
+                bug: "虫", warrior: "武者", knight: "騎士",
+                star: "星", moon: "月", ant: "蟻",
+                elephant: "象", bird: "鳥", book: "本"
+            };
+
+            let 英単語=prompt("英単語を入力してください","");
+            let 日本語=英和辞書[英単語];
+
+            let message;
+            if(! 英単語){
+                message = "英単語を入力してください"
+            }else if(日本語){
+                message=`入力された${英単語}の意味は${日本語}です`;
+            }else{
+                message=`入力された${英単語}の意味は辞書に登録されておりません`;
+            }
+
+            document.write(message);
+        </script>
+    </body>
+</html>

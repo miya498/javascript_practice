@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript演習4-12</title>
+    </head>
+    <body>
+        <script>
+            "use strict";
+            
+            const star=`style="width: 25%;"`;
+            let html="";
+            for(let i=0;i<40;i++){
+                const num = i.toString().padStart(3,"0");
+                const file=`pictures/picture${num}.jpg`;                
+                const imagetag=`<a href="${file}"><img src="${file}" ${star}></a>`;
+                html += imagetag;           
+            }
+            document.write(html);
+        </script>
+    </body>
+</html>

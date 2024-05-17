@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript10章</title>
+        <style>
+            .movie{
+                width: 45%;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div  style="text-align: center;">
+            <h1>スライドショー</h1>
+            <img src="pictures/picture000.jpg" style="width: 80%;">        
+        </div>
+        
+        <script>
+            "use strict";
+        
+            const lastPicNum=7;
+            let pictNum=1;
+            let timerID = setInterval(changePict,2*1000)
+
+            function changePict(){
+                document.images[0].src=`pictures/picture00${pictNum}.jpg`;
+                pictNum++;
+                if(lastPicNum < pictNum){
+                    clearInterval(timerID);
+                }
+            }
+            
+        </script>
+    </body>
+</html>

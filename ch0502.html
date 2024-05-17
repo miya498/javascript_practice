@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript演習5-3,-4,-5</title>
+    </head>
+    <body>
+        <script>
+            "use strict";
+            
+            function 画像タグを生成(ファイル名){
+                let html = "";
+                for(let i=0;i<5;i++){
+                    const 数字部分 = i.toString().padStart(3,"0");
+                    html += `<img src="${ファイル名}${数字部分}.jpg" style="width: ${i*100}px; height: ${i*75}px;">`;
+                }
+                return html;
+            }
+
+            let x=画像タグを生成("pictures/picture");
+            document.write(x);
+        </script>
+    </body>
+</html>

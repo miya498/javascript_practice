@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript演習4-6,7</title>
+    </head>
+    <body>
+        <script>
+            "use strict";
+            const star=`style="width: 20%;"`;
+
+            let html="";
+            for(let i=0; i<10; i++){
+                const file=`pictures/picture00${i}.jpg`;
+                const imagetag=`<img src="${file}" ${star}>`;
+                html += imagetag;               
+            }
+            document.write(html);
+        </script>
+    </body>
+</html>

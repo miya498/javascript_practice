@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript演習11章 画像の移動</title>
+    </head>
+    <body>
+        <div id="rectangle">
+            <img src="pictures/rectangle.png">
+        </div>
+
+        <script>
+            "use strict";
+            const rectangle=document.getElementById("rectangle");
+            let counter=0;
+            const timerID=setInterval(moveRectangle,50);
+
+            function moveRectangle(){
+                counter++;
+                rectangle.style.marginLeft=counter+"px";
+
+                if(800<counter){
+                    clearInterval(timerID);
+                }
+            }
+
+        </script>
+    </body>
+</html>

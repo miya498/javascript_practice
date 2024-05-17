@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>omikuzi</title>
+    </head>
+    <body>
+        <script>
+            "use select";
+            let x=Math.random();
+            if(x < 0.1){
+                x = "大凶";
+                document.write("<img src='pictures/omikuji_daikyou.png'>");
+            }else if(x < 0.3){
+                x = "凶";
+                document.write("<img src='pictures/omikuji_kyou.png'>");
+            }else if(x < 0.5){
+                x = "末吉";
+                document.write("<img src='pictures/omikuji_suekichi.png'>");
+            }else if(x < 0.7){
+                x = "小吉";
+                document.write("<img src='pictures/omikuji_shoukichi.png'>");
+            }else if(x < 0.9){
+                x = "中吉";
+                document.write("<img src='pictures/omikuji_chuukichi.png'>");
+            }else{
+                x = "大吉";
+                document.write("<img src='pictures/omikuji_daikichi.png'>");
+            }
+            
+        </script>
+    </body>
+</html>

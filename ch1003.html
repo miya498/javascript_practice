@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript10-1,-2</title>
+        <style>
+            .movie{
+                width: 45%;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div  style="text-align: center;">
+            <h1>ランダムなニュースサイトに移動</h1>        
+        </div>
+        
+        <script>
+            "use strict";
+        
+            const サイトの配列=["asahi.com","mainichi.jp","yomiuri.jp","nikkei.com","news.yahoo.co.jp"];
+            
+            const i=ランダムな数を取得(サイトの配列.length-1);
+
+            const url="https://"+サイトの配列[i];
+
+            const ok=confirm(`okを押すと${url}へ移動します`);
+
+            if(ok){
+                document.write(`3秒後に${url}へ移動します`);
+                setTimeout(()=> location.href=url,3*1000);
+            }else{
+                document.write("キャンセルしました");
+            }
+
+            function ランダムな数を取得(n){
+                let x=Math.random();
+                x = x*(n+1);
+                x = Math.floor(x);
+                return x;
+            }
+        </script>
+    </body>
+</html>

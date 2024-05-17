@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript演習6-1,2,3</title>
+    </head>
+    <body>
+        <script>
+            "use strict";
+            
+            const 秒数=3;
+            const 回数=3;
+            let カウンタ=0;
+
+            document.write("しばらくお待ちください。<br>3秒後にメッセージが表示されます")
+            const タイマーID= setInterval(メッセージを表示,秒数*1000);
+
+                
+            function メッセージを表示(){
+                カウンタ++;
+                alert(秒数+"秒経過");
+                if(回数 <= カウンタ){
+                    clearInterval(タイマーID);
+                }
+            }           
+
+        </script>
+    </body>
+</html>

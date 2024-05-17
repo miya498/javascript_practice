@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript演習9-4</title>
+        <style>
+            .movie{
+                width: 45%;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+
+    <body style="text-align: center;">
+        
+
+        <script>
+            "use strict";
+        
+            const now = new Date();
+
+            const year=now.getFullYear();
+            const month=now.getMonth();
+            const date=now.getDate();
+            const dayOfTheweek=now.getDay();
+
+
+            
+            const hour= now.getHours();
+            const minite=now.getMinutes();
+            const second=now.getSeconds();
+            if(5 <= hour && hour<11){
+                document.write("おはようございます！<br>");
+            }else if(11 <= hour && hour<18){
+                document.write("こんにちは！<br>");
+            }else{
+                document.write("こんばんは！<br>");
+            }
+
+            document.write(`今現在${year}年${month}月${date}日(${dayOfTheweek})${hour}時${minite}分${second}秒です`);
+            
+        </script>
+    </body>
+</html>

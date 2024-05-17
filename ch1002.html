@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript10-1,-2</title>
+        <style>
+            .movie{
+                width: 45%;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div  style="text-align: center;">
+            <h1>スライドショー 2枚ずつ表示</h1>
+            <img class="image" src="pictures/picture000.jpg" style="width: 40%;"><img>
+            <img class="image" src="pictures/picture001.jpg" style="width: 40%;"><img>        
+        </div>
+        
+        <script>
+            "use strict";
+        
+            const images=document.getElementsByClassName("image");
+            const lastPicNum=15;
+            let pictNum=0;
+            let timerID = setInterval(changePict,2*1000)
+
+            function changePict(){
+                const 数字部分1=(2*pictNum).toString().padStart(3,"0");
+                const 数字部分2=(2*pictNum+1).toString().padStart(3,"0");
+
+                images[0].src=`pictures/picture${数字部分1}.jpg`;
+                images[1].src=`pictures/picture${数字部分2}.jpg`;
+                
+                pictNum++;
+                if(lastPicNum < pictNum){
+                    clearInterval(timerID);
+                }
+            }
+            
+        </script>
+    </body>
+</html>

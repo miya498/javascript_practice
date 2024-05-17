@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript演習4-10,11</title>
+    </head>
+    <body>
+        <script>
+            "use strict";
+            
+            let html ="<table>";
+            const star=`style="width: 120px;"`;
+            let num=0;
+            for(let i=0;i<4;i++){
+                html+="<tr>";
+                for(let j=0; j<4; j++){
+                    let file;
+                    if(num<10){
+                        file=`pictures/picture00${num}.jpg`;
+                    }else{
+                        file=`pictures/picture0${num}.jpg`;
+                    }
+                    const imagetag=`<td><a href="${file}"><img src="${file}" ${star}></a></td>`;
+                    html += imagetag;     
+                    num++;          
+                }
+                html += "</tr>"
+            }
+            html+="</table>";
+            
+            document.write(html);
+        </script>
+    </body>
+</html>

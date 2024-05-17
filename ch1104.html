@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript演習11-1</title>
+    </head>
+    <body>
+        <div style="width: 320px; text-align: center; font-size: 36pt;">
+            ロケット発射<br>
+            <img src="pictures/rocket1.png" style="width: 200px;">
+            <div id="counterArea"></div>
+        </div>
+
+        <script>
+            "use strict";
+            let count=10;
+            let timerID=setInterval(countDown,1000);
+
+            function countDown(){
+                console.time("timer1")
+                if(0<=count){
+                    document.getElementById("counterArea").innerHTML=count;
+                    count--;
+                }else{
+                    clearInterval(timerID);
+                    document.getElementById("counterArea").innerHTML="発射!";
+                    document.images[0].src="pictures/rocket2.png";
+                }
+                console.timeEnd("timer1")
+            }
+
+        </script>
+    </body>
+</html>
