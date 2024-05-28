@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript演習12-1</title>
+        <style>
+            #rocket{
+                width: 200px;
+                cursor: pointer;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>画像をクリック</h1>
+            <img id="rocket" src="pictures/rocket1.png">
+        </div>
+
+        <script>
+            "use strict";
+            let ロケット=document.getElementById("rocket");
+            ロケット.addEventListener("click",()=>{
+                const img=document.getElementById("rocket");
+
+                img.addEventListener("click",()=>{
+                    alert("クリックしました!");
+                });                
+            });
+
+        </script>
+    </body>
+</html>

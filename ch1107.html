@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript演習11-7,8</title>
+    </head>
+    <body>
+        <div id="rocket">
+            <img src="pictures/rocket3.png" style="width: 200px;">
+        </div>
+
+        <script>
+            "use strict";
+            let ロケット=document.getElementById("rocket");
+            let 方向=0;
+            let counter=0;
+            const 動かす幅=400;
+            const timerID=setInterval(moveRocket,100);
+
+            function moveRocket(){
+
+               
+
+                if(方向==0){
+                    let 写真="pictures/rocket3.png"
+                    counter+=5;
+                    if(動かす幅>counter){
+                        ロケット.style.marginLeft=counter+"px";
+                        ロケット.innerHTML=`<img src="${写真}">`
+                    }else{
+                        方向=1;
+                        counter=800;
+                    }
+                }else{
+                    let 写真="pictures/rocket4.png"
+                    counter-=5;
+                    if(counter>1){
+                        ロケット.style.marginLeft=counter+"px";
+                        ロケット.innerHTML=`<img src="${写真}">`
+                    }else{
+                        方向=0;
+                        counter=1;
+                    }
+                }
+            }
+
+        </script>
+    </body>
+</html>

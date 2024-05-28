@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript11-2</title>
+    </head>
+    <body>
+        <div style="width: 320px; text-align: center; font-size: 36pt;">
+            <div id="counterArea"></div>
+        </div>
+
+        <script>
+            "use strict";
+            let count=10;
+            const タイマーID=setInterval(カウントダウン,1000);
+
+
+            function カウントダウン(){
+                if(count >= 0){
+                    画面書き換え(count,"pictures/rocket1.png");
+                    count--;
+                }else{
+                    clearInterval(タイマーID);
+                    画面書き換え("発射!","pictures/rocket2.png");
+                }
+            }
+
+            function 画面書き換え(テキスト,画像ファイル){
+                console.time("timer3")
+                document.getElementById("counterArea").innerHTML=`
+                <div style="text-align: center; font-size: 36pt;">
+                    ロケット発射<br>
+                    <img src="${画像ファイル}" style="width: 200px;"><br>
+                    ${テキスト}
+                </div>`;
+                
+                console.timeEnd("timer3")
+            }
+        </script>
+    </body>
+</html>

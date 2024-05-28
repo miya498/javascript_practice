@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12-12</title>
+  <style>
+    .movie{
+        width: 60%;
+        border-radius: 10px;
+    }
+    .controller{
+        margin: 1rem;
+        text-align: center;
+        font-size: 20pt;
+    }
+    .botton{
+        width: 30%;
+        color: white;
+        background-color: #0032BF;
+        padding: 1rem;
+        border-radius: 1rem;
+        cursor: pointer;
+    }
+  </style>
+</head>
+ 
+<body style="text-align: center;">
+    <h2>動画の再生と停止</h2>
+    
+    <div>
+        <video class="movie" src="movies/no00.mp4" poster="movies/no00.jpg" playsinline loop>
+        </video>
+    </div>
+
+    <div class="controller">
+        <span class="botton" id="startStop">再生</span>
+    </div>
+
+    <script>
+        "use strict"
+        const movies=document.getElementsByClassName("movie");
+        const startStopButton=document.getElementById("startStop");
+
+        startStopButton.addEventListener("click",()=>{
+            if(movies[0].paused){
+                movies[0].play();
+                startStopButton.innerHTML="停止";
+            }else{
+                movies[0].pause();
+                startStopButton.innerHTML="再生"
+            }
+        });
+    </script>
+
+</body>
+</html>

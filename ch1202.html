@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript演習12.2
+        </title>
+
+        <style type="text/css">
+            body{
+                text-align: center;
+            }
+            .smallPict{
+                width: 120px;
+            }
+            .bigPict{
+                width: 400px;
+            }
+        </style>
+    </head>
+
+
+    <body>
+        <h1>Photo Gallery</h1>
+        <div id="smallPicts">
+        </div>
+        <div id="pictFrame">
+        </div>        
+
+        <script>
+            "use strict";
+            const numberOfPicts=5;
+            let html="";
+            for(let i=0;i<numberOfPicts;i++){
+                const filename=`pictures/picture00${i}.jpg`;
+                html+=`<img id="image${i}" class="smallPict" src="${filename}">`;
+            }
+            document.getElementById("smallPicts").innerHTML=html;
+
+            for(let i=0;i<numberOfPicts;i++){
+                const filename=`pictures/picture00${i}.jpg`;
+                const img=document.images[i];
+                if(0<navigator.maxTouchPoints){
+                    img.addEventListener("touchstart",()=>{
+                        if(document.getElementById("pictFrame").innerHTML.includes
+                        (filename)){
+                            document.getElementById("pictFrame").innerHTML="";
+                            }else{
+                                document.getElementById("pictFrame").innerHTML
+                                =`<img class="bigPict" src="${filename}">`;
+                            }
+                    });
+                }else{
+                    img.addEventListener("mouseover",()=>
+                    document.getElementById("pictFrame").innerHTML
+                    =`<img class="bigPict" src="${img.src}"> `
+                    );
+
+                    img.addEventListener("mouseout",() =>
+                    document.getElementById("pictFrame").innerHTML=""               
+                    );
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript演習12-2</title>
+        <style>
+            #button{
+                background-color: yellow;
+                width: 200px;
+                margin: 0;
+                padding: 10px 40px;
+                font-size: 20pt;
+                cursor: pointer;
+                border-radius: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="text-align: center;">
+            ロケット発射<br>
+            <img id="pict" src="pictures/rocket1.png" style="width: 200px;"><br>
+            <span id="button">発射</span>            
+        </div>
+              
+        <div id="counterArea"></div>
+
+        <script>
+            "use strict";
+            let count=10;
+            let timerID=-1;
+            const buttonObject=document.getElementById("button");
+
+            function countDown(){
+                if(0<=count){
+                    buttonObject.innerHTML=count;
+                }else{
+                    buttonObject.innerHTML="発射成功!";
+                    document.images[0].src="pictures/rocket2.png";
+                    clearInterval(timerID);
+                }
+                count--;
+            }
+
+            buttonObject.addEventListener("click",()=>{
+                if(timerID==-1){
+                    buttonObject.innerHTML=count;
+                    count--;
+                    timerID=setInterval(countDown,1000);
+                }
+            });
+
+        </script>
+    </body>
+</html>
